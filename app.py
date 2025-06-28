@@ -4,6 +4,9 @@ from utils.ocr_utils import extract_text_from_pdf, extract_text_from_image
 from utils.validators import is_valid_email
 from utils.email_utils import send_log_via_email
 import shutil
+import os
+import glob
+
 
 st.set_page_config(page_title="Automation Toolkit", layout="wide")
 
@@ -66,15 +69,27 @@ if st.checkbox("🧹 Clear saved renamed files and logs after download"):
 
  
 
-if st.checkbox("✉️ Send log via email"):
+def get_latest_log(log_folder="logs"):
+    list_of_logs = glob.glob(f"{log_folder}/*.txt")
+    if not list_of_logs:
+        return None
+    return max(list_of_logs, key=os.path.getctime)
+
+if st.checkbox("✉️ Send log via email", key="email_log_checkbox"):
     recipient = st.text_input("Recipient Email")
     sender = st.text_input("Your Email (Gmail)")
     password = st.text_input("App Password", type="password")
 
-    if st.button("Send Email"):
-        try:
-            send_log_via_email(recipient, log_path, sender, password)
-            st.success("Email sent successfully.")
-        except Exception as e:
-            st.error(f"Failed to send email: {e}")
-           
+    if recipient and sender and password:
+        if st.button("Send Email"):
+            log_path = get_latest_log()
+            if not log_path:
+                st.error("No log file found to send.")
+            else:
+                try:
+                    send_log_via_email(recipient, log_path, sender, password)
+                    st.success("Email sent successfully.")
+                except Exception as e:
+                    st.error(f"Failed to send email: {e}")
+    else:
+        st.info("Please fill all email fields to send the log.")
