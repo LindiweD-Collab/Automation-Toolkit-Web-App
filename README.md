@@ -78,17 +78,17 @@ Open http://localhost:8501 in your browser.
 
 ### ⚙️ Technologies Used
 ```
-Python 🐍
+Python 
 
-Streamlit 📊
+Streamlit 
 
-Pandas, OpenPyXL, XlsxWriter 🧮
+Pandas, OpenPyXL, XlsxWriter 
 
-PyTesseract (OCR) 🔍
+PyTesseract (OCR) 
 
-smtplib (email sender) ✉️
+smtplib (email sender) 
 
-Regex (email validation) 📧
+Regex (email validation)
 ```
 
 ### ✉️ Email Log Feature (Gmail)
@@ -102,12 +102,16 @@ Regex (email validation) 📧
 
 ⚠️ This is required if your Gmail has 2FA enabled. Your login password will not work.
 
+
+
 ### 🧼 Maintenance Features
+```
 ✅ Option to clear old logs and renamed files after processing
 
 📦 Automatic creation of logs/ and renamed_files/ folders
 
 📄 Downloadable session logs with timestamps
+```
 
 ### 📄 License
 This project is licensed under the MIT License.
