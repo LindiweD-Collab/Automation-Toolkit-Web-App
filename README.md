@@ -16,7 +16,7 @@ This toolkit showcases how automation can simplify repetitive tasks from a centr
 ✅ **Extract text from PDFs and images (OCR)**  
 ✅ **Validate email addresses**  
 ✅ **Convert CSV to Excel**  
-✅ **Download logs**  
+  
 
 ---
 
@@ -24,10 +24,15 @@ This toolkit showcases how automation can simplify repetitive tasks from a centr
 
 automation_toolkit/
 ├── app.py # Main Streamlit app
+|
 ├── utils/ # Utility scripts
+|
 │ ├── file_utils.py # File renaming, conversions
+|
 │ ├── ocr_utils.py # OCR (PDF/image text extraction)
+|
 │ └── validators.py # Email validation
+|
 ├── requirements.txt # Python dependencies
 
 
