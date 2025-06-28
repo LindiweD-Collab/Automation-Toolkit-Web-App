@@ -28,6 +28,7 @@ This toolkit showcases how automation can simplify repetitive tasks from a centr
 
 Automation-Toolkit-Web-App/
 ├── app.py                  # Main Streamlit app entry point
+|
 ├── tasks.py                # Scheduled job logic (for future automation)
 ├── logs/                   # Auto-generated logs from each session
 ├── renamed_files/          # Folder to store renamed files temporarily
