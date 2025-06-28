@@ -12,28 +12,31 @@ This toolkit showcases how automation can simplify repetitive tasks from a centr
 
 ## 🧰 Features
 
-✅ **Rename a batch of files**  
-✅ **Extract text from PDFs and images (OCR)**  
-✅ **Validate email addresses**  
-✅ **Convert CSV to Excel**  
+✅ Rename a batch of files and download them as a ZIP  
+✅ Extract text from PDFs and images using OCR (Tesseract)  
+✅ Validate email addresses  
+✅ Convert CSV to Excel format  
+✅ Download task logs  
+✅ Send logs via email (Gmail SMTP)  
+✅ Option to clear saved files and logs  
+✅ Logs saved automatically per session    
   
 
 ---
 
 ## 📁 File Structure
 
-automation_toolkit/
+Automation-Toolkit-Web-App/
 ├── app.py # Main Streamlit app
-|
-├── utils/ # Utility scripts
-|
-│ ├── file_utils.py # File renaming, conversions
-|
-│ ├── ocr_utils.py # OCR (PDF/image text extraction)
-|
-│ └── validators.py # Email validation
-|
-├── requirements.txt # Python dependencies
+├── tasks.py # Scheduled job logic (for future automation)
+├── logs/ # Saved logs (auto-created)
+├── renamed_files/ # Renamed files (auto-created)
+├── utils/ # Helper functions
+│ ├── file_utils.py # File rename, CSV→Excel, ZIP, log
+│ ├── ocr_utils.py # Image/PDF OCR
+│ ├── validators.py # Email validation
+│ └── email_utils.py # Send logs via email
+├── requirements.txt
 
 
 ---
@@ -79,12 +82,32 @@ Python 🐍
 
 Streamlit 📊
 
-PyTesseract 🔍
+Pandas, OpenPyXL, XlsxWriter 🧮
 
-Pandas & OpenPyXL 📁
+PyTesseract (OCR) 🔍
 
-Regex for email validation 📧
+smtplib (email sender) ✉️
+
+Regex (email validation) 📧
 ```
+
+### ✉️ Email Log Feature (Gmail)
+***To use the email log feature:***
+
+-Go to Google App Passwords
+
+-Generate a new app password for "Mail"
+
+-Use that app password in the Streamlit form
+
+⚠️ This is required if your Gmail has 2FA enabled. Your login password will not work.
+
+### 🧼 Maintenance Features
+✅ Option to clear old logs and renamed files after processing
+
+📦 Automatic creation of logs/ and renamed_files/ folders
+
+📄 Downloadable session logs with timestamps
 
 ### 📄 License
 This project is licensed under the MIT License.
