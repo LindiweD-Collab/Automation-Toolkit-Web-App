@@ -27,16 +27,16 @@ This toolkit showcases how automation can simplify repetitive tasks from a centr
 ## 📁 File Structure
 
 Automation-Toolkit-Web-App/
-├── app.py # Main Streamlit app
-├── tasks.py # Scheduled job logic (for future automation)
-├── logs/ # Saved logs (auto-created)
-├── renamed_files/ # Renamed files (auto-created)
-├── utils/ # Helper functions
-│ ├── file_utils.py # File rename, CSV→Excel, ZIP, log
-│ ├── ocr_utils.py # Image/PDF OCR
-│ ├── validators.py # Email validation
-│ └── email_utils.py # Send logs via email
-├── requirements.txt
+├── app.py                  # Main Streamlit app entry point
+├── tasks.py                # Scheduled job logic (for future automation)
+├── logs/                   # Auto-generated logs from each session
+├── renamed_files/          # Folder to store renamed files temporarily
+├── utils/                  # Modular utility functions
+│   ├── file_utils.py       # File renaming, CSV→Excel, ZIP creation, log writing
+│   ├── ocr_utils.py        # OCR extraction from images or PDFs (using Tesseract)
+│   ├── validators.py       # Email format validation and similar checks
+│   └── email_utils.py      # Send log files via Gmail SMTP
+├── requirements.txt        # Python package dependencies
 
 
 ---
@@ -119,7 +119,7 @@ Feel free to use, fork, and contribute!
 
 
 ### 🧠 Author
-Built by Lindiwe Thabsile Dlomo — Passionate about automation, productivity, and open-source tools.
+Built by (LindiweD-Collab) — Passionate about automation, productivity, and open-source tools.
 
 
 ---
