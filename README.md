@@ -22,7 +22,6 @@ This toolkit showcases how automation can simplify repetitive tasks from a centr
 ✅ Logs saved automatically per session    
   
 
----
 
 ## 📁 File Structure
 
@@ -38,8 +37,6 @@ Automation-Toolkit-Web-App/
 │   └── email_utils.py   # Send log files via Gmail SMTP
 ├── requirements.txt     # Python package dependencies
 
-
----
 
 ## 🖥️ Getting Started
 
